@@ -13,8 +13,8 @@ Run `npm start` in your terminal. Navigate to <http://localhost:3000/> in your b
 
 ## Details
 
-This free-hand sketch functionality was achieved using the Google maps dom event
-once a polygon is complete, you will get the coordinates of borders which you can pass to the API
+This free-hand sketch functionality was achieved using the Google maps dom event listeners.
+Once a polygon is complete, you will get the coordinates of borders which you can pass to the API
 
 ## Use-Case
 
