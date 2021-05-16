@@ -1,6 +1,6 @@
 const config = {
   googleMaps: {
-    apiKey: 'AIzaSyDQMQNxBFctx3ryGyU9FvClOY3vobrYCoI',
+    apiKey: '', // Google API key
     libraries: ['geometry', 'drawing', 'places'],
   },
 };

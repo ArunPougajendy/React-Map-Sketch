@@ -91,7 +91,7 @@ class GoogleMap extends React.Component<Props, State> {
     );
   };
 
-  // Helper Method to get the coordinates across the polygon line
+  // Helper method to get the coordinates across the polygon line
   _polyComplete = (poly: any) => {
     this.polygonControllers = poly;
     let bounds = '';
@@ -156,7 +156,7 @@ class GoogleMap extends React.Component<Props, State> {
 
     this.props.onClear();
     if (this.polygonControllers) {
-      this.polygonControllers.setVisible(false);
+      this.polygonControllers.setMap(null);
     }
     this.mapView.maps_.event.addDomListener(
       this.mapView.googleMapDom_,
@@ -173,7 +173,7 @@ class GoogleMap extends React.Component<Props, State> {
       () => {
         this.props.onClear();
         if (this.polygonControllers) {
-          this.polygonControllers.setVisible(false);
+          this.polygonControllers.setMap(null);
         }
       },
     );
@@ -266,7 +266,10 @@ class GoogleMap extends React.Component<Props, State> {
         )}
         <GoogleMapReact
           ref={(ref: any) => (this.mapView = ref)}
-          bootstrapURLKeys={{ key: config.googleMaps.apiKey }}
+          bootstrapURLKeys={{
+            key: config.googleMaps.apiKey,
+            libraries: config.googleMaps.libraries,
+          }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           onTilesLoaded={this._onMapLoaded}
